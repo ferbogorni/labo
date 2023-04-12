@@ -1,7 +1,7 @@
 #Arbol elemental con libreria  rpart
 #Debe tener instaladas las librerias  data.table  ,  rpart  y  rpart.plot
 
-#cargo las librerias que necesito
+#cargo las librerias que necesito para probar
 require("data.table")
 require("rpart")
 require("rpart.plot")
