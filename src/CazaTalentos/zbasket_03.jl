@@ -1,6 +1,6 @@
 using Random
 
-Random.seed!(102191)
+Random.seed!(100103)
 
 #calcula cuantos encestes logra un jugador con indice de enceste prob
 #que hace qyt tiros libres
