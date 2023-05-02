@@ -58,3 +58,6 @@ pdf(file = "stopping_at_canaritos.pdf", width=28, height=4)
 prp(modelo_pruned, extra=101, digits=-5, branch=1, type=4, varlen=0, faclen=0)
 dev.off()
 
+pdf(file = "arbol_original.pdf", width=28, height=4)
+prp(modelo_original, extra=101, digits=-5, branch=1, type=4, varlen=0, faclen=0)
+dev.off()
