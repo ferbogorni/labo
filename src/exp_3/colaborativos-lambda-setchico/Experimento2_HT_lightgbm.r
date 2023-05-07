@@ -31,9 +31,9 @@ options(error = function() {
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento <- "HT6510-EXP-LAMBDA"
+PARAM$experimento <- "HT6510-EXP3-LAMBDA-SI"
 
-PARAM$exp_input  <- "TS6410 "  # Dejar el resultado en otra carpeta y utilizarla en el siguiente script
+PARAM$exp_input  <- "TS6410-EXP3"  # Dejar el resultado en otra carpeta y utilizarla en el siguiente script
 
 PARAM$lgb_crossvalidation_folds  <- 5  #En caso que se haga cross validation, se usa esta cantidad de folds
 
@@ -80,9 +80,9 @@ PARAM$bo_lgb <- makeParamSet(
   makeNumericParam("feature_fraction", lower=    0.01,  upper=     0.4),
   makeIntegerParam("num_leaves",       lower=    1L,    upper=   3000L),
   makeIntegerParam("min_data_in_leaf", lower=    1L,    upper=  75000L),
-  makeIntegerParam("lambda_l1",        lower=    0L,    upper=   1000L),
-  makeIntegerParam("lambda_l2",        lower=    0L,    upper=   1000L),
-  makeIntegerParam("min_gain_to_split",lower=    0L,    upper=     20L)
+  makeNumericParam("lambda_l1",        lower=    0.0,    upper=   1000.0),
+  makeNumericParam("lambda_l2",        lower=    0.0,    upper=   1000.0),
+  makeNumericParam("min_gain_to_split",lower=    0,0,    upper=     20.0)
 )
 
 

@@ -31,9 +31,9 @@ options(error = function() {
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento <- "HT6510-EXP2-LAMBDA-NO-TS"
+PARAM$experimento <- "HT6510-EXP3-LAMBDA-NO"
 
-PARAM$exp_input  <- "TS6410-EXP-LAMBDA"  # Dejar el resultado en otra carpeta y utilizarla en el siguiente script
+PARAM$exp_input  <- "TS6410-EXP3.1"  # Dejar el resultado en otra carpeta y utilizarla en el siguiente script
 
 PARAM$lgb_crossvalidation_folds  <- 5  #En caso que se haga cross validation, se usa esta cantidad de folds
 
@@ -51,7 +51,7 @@ PARAM$lgb_basicos <- list(
    force_row_wise= TRUE,           #para que los alumnos no se atemoricen con tantos warning
    verbosity= -100,
    max_depth=  -1L,                # -1 significa no limitar,  por ahora lo dejo fijo
-#   min_gain_to_split= 0.0,         # min_gain_to_split >= 0.0
+   min_gain_to_split= 0.0,         # min_gain_to_split >= 0.0
    min_sum_hessian_in_leaf= 0.001, #  min_sum_hessian_in_leaf >= 0.0
    lambda_l1= 0.0,                 # lambda_l1 >= 0.0
    lambda_l2= 0.0,                 # lambda_l2 >= 0.0
@@ -80,9 +80,6 @@ PARAM$bo_lgb <- makeParamSet(
   makeNumericParam("feature_fraction", lower=    0.01,  upper=     0.4),
   makeIntegerParam("num_leaves",       lower=    1L,    upper=   3000L),
   makeIntegerParam("min_data_in_leaf", lower=    1L,    upper=  75000L),
-  #makeIntegerParam("lambda_l1",        lower=    0L,    upper=   1000L),
-  #makeIntegerParam("lambda_l2",        lower=    0L,    upper=   1000L),
-  #makeIntegerParam("min_gain_to_split",lower=    0L,    upper=     20L)
 )
 
 
