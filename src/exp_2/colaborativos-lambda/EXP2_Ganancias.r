@@ -1,10 +1,13 @@
+rm( list= ls(all.names= TRUE) )  #remove all objects
+gc( full= TRUE )                 #garbage collection
+
 require("data.table")
 
 
 dataset_grande <- fread("~/buckets/b1/datasets/competencia_2023.csv.gz") 
 #
-# Cambiar para cada salida de los ZZ
-dataset_pred <- fread("~/buckets/b1/exp/ZZ6910-EXP2-LAMBDA-SI-A/pred_01_040.csv")
+# Cambiar para cada salida de script ZZ final y cada semilla
+dataset_pred <- fread("~/buckets/b1/exp/ZZ6910-FER-3A5/pred_01_047.csv")
 
 dataset_pred[dataset_grande,
              on= c("numero_de_cliente","foto_mes"),
@@ -18,4 +21,4 @@ dataset_pred[,ganancia_acumulada:=cumsum(ganancia)]
 
 dataset_pred[,envios:=.I]
 
-fwrite(dataset_pred[1:20000],"~/buckets/b1/exp/ZZ691-3A1/pred_01_040graficar.csv")
+fwrite(dataset_pred[1:20000],"~/buckets/b1/exp/zz701/3A5_pred_01_047_graficar.csv")
